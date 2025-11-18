@@ -1,0 +1,62 @@
+---
+layout: default
+title: Projects
+lang: en
+permalink: /en/projects/
+---
+
+{% assign t = site.data.translations[page.lang] %}
+
+<div class="page-header">
+    <h1>{{ t.projects.page_title }}</h1>
+    <p>{{ t.projects.page_subtitle }}</p>
+</div>
+
+<div class="container">
+    {% if site.projects_en.size > 0 %}
+    <div class="cards-grid">
+        {% assign sorted_projects = site.projects_en | sort: 'end_date' | reverse %}
+        {% for project in sorted_projects %}
+        <article class="card">
+            <div class="card-content">
+                <h3 class="card-title">
+                    <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+                </h3>
+                <p class="card-description">{{ project.subtitle }}</p>
+
+                {% if project.start_date %}
+                <div class="card-meta" style="margin-bottom: 0.5rem;">
+                    <strong>{{ t.projects.period }}:</strong>
+                    {{ project.start_date | date: "%b %Y" }}
+                    {% if project.end_date %}
+                    - {{ project.end_date | date: "%b %Y" }}
+                    {% else %}
+                    - {{ t.projects.current }}
+                    {% endif %}
+                </div>
+                {% endif %}
+
+                {% if project.role %}
+                <div class="card-meta" style="margin-bottom: 0.5rem;">
+                    <strong>{{ t.projects.role }}:</strong> {{ project.role }}
+                </div>
+                {% endif %}
+
+                {% if project.technologies %}
+                <div style="margin-top: 1rem;display: flex;flex-wrap: wrap;gap: 0.3rem;">
+                    {% for tech in project.technologies limit:5 %}
+                    <span class="tech-tag">{{ tech }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div style="text-align: center; padding: 3rem 0; color: var(--text-light);">
+        <p>No projects have been registered yet.</p>
+        <p>Projects will be added soon.</p>
+    </div>
+    {% endif %}
+</div>

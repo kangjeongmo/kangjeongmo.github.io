@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bundle exec jekyll build:*)",
+      "Bash(bundle exec jekyll clean:*)",
+      "Bash(bundle exec jekyll serve:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

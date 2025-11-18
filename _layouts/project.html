@@ -1,0 +1,75 @@
+---
+layout: default
+---
+
+{% assign t = site.data.translations[page.lang] | default: site.data.translations.ko %}
+{% assign current_lang = page.lang | default: 'ko' %}
+
+<article class="project">
+    <header class="project-header">
+        <h1 class="project-title">{{ page.title }}</h1>
+        <p class="project-subtitle">{{ page.subtitle }}</p>
+
+        <div class="project-meta">
+            {% if page.start_date %}
+            <div class="meta-item">
+                <span class="meta-label">{{ t.project.period }}:</span>
+                <span class="meta-value">
+                    {% if current_lang == 'en' %}
+                    {{ page.start_date | date: "%b %Y" }}
+                    {% if page.end_date %}
+                     - {{ page.end_date | date: "%b %Y" }}
+                    {% else %}
+                     - {{ t.project.current }}
+                    {% endif %}
+                    {% else %}
+                    {{ page.start_date | date: "%Y년 %m월" }}
+                    {% if page.end_date %}
+                     - {{ page.end_date | date: "%Y년 %m월" }}
+                    {% else %}
+                     - {{ t.projects.current }}
+                    {% endif %}
+                    {% endif %}
+                </span>
+            </div>
+            {% endif %}
+
+            {% if page.role %}
+            <div class="meta-item">
+                <span class="meta-label">{{ t.project.role }}:</span>
+                <span class="meta-value">{{ page.role }}</span>
+            </div>
+            {% endif %}
+
+            {% if page.technologies %}
+            <div class="meta-item">
+                <span class="meta-label">{{ t.project.tech_stack }}:</span>
+                <div class="tech-stack">
+                    {% for tech in page.technologies %}
+                    <span class="tech-tag">{{ tech }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+
+        {% if page.links %}
+        <div class="project-links">
+            {% if page.links.demo %}
+            <a href="{{ page.links.demo }}" class="btn btn-primary" target="_blank" rel="noopener">{{ t.project.view_demo }}</a>
+            {% endif %}
+            {% if page.links.github %}
+            <a href="{{ page.links.github }}" class="btn btn-secondary" target="_blank" rel="noopener">{{ t.project.view_github }}</a>
+            {% endif %}
+        </div>
+        {% endif %}
+    </header>
+
+    <div class="project-content">
+        {{ content }}
+    </div>
+
+    <footer class="project-footer">
+        <a href="{% if current_lang == 'en' %}/en/projects{% else %}/projects{% endif %}" class="back-link">{{ t.project.back_to_list }}</a>
+    </footer>
+</article>

@@ -1,0 +1,70 @@
+# 프로젝트 번역 용어 사전 (Korean → English)
+
+# 역할명
+roles:
+  "풀스택 개발자": "Full-stack Developer"
+  "프론트엔드 개발자": "Frontend Developer"
+  "백엔드 개발자": "Backend Developer"
+  "iOS 개발자": "iOS Developer"
+  "iOS Developer": "iOS Developer"
+  "웹 퍼블리셔": "Web Publisher"
+  "1인 개발": "Solo Developer"
+
+# 섹션 헤더
+sections:
+  "프로젝트 개요": "Project Overview"
+  "주요 기능": "Key Features"
+  "핵심 기능": "Core Features"
+  "기술 스택": "Tech Stack"
+  "기술 구현": "Technical Implementation"
+  "핵심 기술 구현": "Core Technical Implementation"
+  "성과": "Results & Achievements"
+  "기술적 도전과 해결": "Technical Challenges & Solutions"
+  "해결한 기술 과제": "Resolved Technical Challenges"
+  "개선 사항": "Improvements"
+  "특징": "Characteristics"
+
+# 프로젝트 유형
+project_types:
+  "공정관리 시스템": "Production Pipeline Management System"
+  "에셋 버전 관리": "Asset Version Control"
+  "에셋 검색": "Asset Search"
+  "업무 노트": "Work Note Management"
+  "펜션 예약관리": "Pension Reservation Management"
+  "채용 시스템": "Recruitment System"
+  "ERP 시스템": "ERP System"
+  "모니터링 시스템": "Monitoring System"
+  "반려견 나이 계산기": "Dog Age Calculator"
+  "어린이 나이 계산기": "Kids Age Calculator"
+
+# 기술 용어 (한글 → 영문)
+tech_terms:
+  "반응형 웹": "Responsive Web"
+  "관리자 페이지": "Admin Panel"
+  "대시보드": "Dashboard"
+  "실시간": "Real-time"
+  "데이터베이스": "Database"
+  "프론트엔드": "Frontend"
+  "백엔드": "Backend"
+  "서버": "Server"
+  "클라이언트": "Client"
+  "API": "API"
+  "UI/UX": "UI/UX"
+  "사용자 인터페이스": "User Interface"
+  "성능 최적화": "Performance Optimization"
+  "보안": "Security"
+  "인증": "Authentication"
+  "권한 관리": "Authorization Management"
+
+# 일반 용어
+common:
+  "기간": "Period"
+  "역할": "Role"
+  "현재": "Present"
+  "진행중": "Ongoing"
+  "완료": "Completed"
+  "개발": "Development"
+  "설계": "Design"
+  "구현": "Implementation"
+  "배포": "Deployment"
+  "유지보수": "Maintenance"

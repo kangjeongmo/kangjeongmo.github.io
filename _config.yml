@@ -1,0 +1,67 @@
+# Site settings
+title: 강정모 | 프리랜서 개발자
+email: jeongmo.dev@gmail.com
+description: >-
+  1인 개발자 프리랜서로 활동하고 있습니다.<br />
+  웹/앱 개발, 시스템 설계 및 구축을 전문으로 합니다.
+baseurl: ''
+url: 'https://kangjeongmo.github.io'
+
+# Language settings
+languages: ["ko", "en"]
+default_lang: "ko"
+exclude_from_localization: ["assets", "css", "js"]
+
+# Author information
+author:
+  name: 강정모
+  email: jeongmo.dev@gmail.com
+  github: kangjeongmo
+  linkedin: # your-linkedin-username
+  twitter: # your-twitter-username
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+sass:
+  style: compressed
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+  projects_en:
+    output: true
+    permalink: /en/projects/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ''
+      type: 'posts'
+    values:
+      layout: 'post'
+  - scope:
+      path: ''
+      type: 'projects'
+    values:
+      layout: 'project'
+      lang: 'ko'
+  - scope:
+      path: ''
+      type: 'projects_en'
+    values:
+      layout: 'project'
+      lang: 'en'
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .bundle
+  - .sass-cache
+  - .jekyll-cache
+  - .jekyll-metadata

@@ -1,0 +1,89 @@
+---
+layout: default
+title: 홈
+lang: ko
+---
+
+{% assign t = site.data.translations[page.lang] %}
+
+<section class="hero">
+    <div class="container">
+        <h1>{{ t.home.hero_title }}</h1>
+        <p>
+            {{ t.home.hero_description }}
+        </p>
+        <div class="hero-buttons">
+            <a href="{{ '/projects' | relative_url }}" class="btn btn-primary">{{ t.home.cta_projects }}</a>
+            <a href="{{ '/contact' | relative_url }}" class="btn btn-secondary">{{ t.home.cta_contact }}</a>
+        </div>
+    </div>
+</section>
+
+<section class="skills">
+    <div class="container">
+        <h2>{{ t.home.skills_title }}</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>{{ t.skills.frontend.title }}</h3>
+                <p>React, Next.js<br>HTML, CSS, JavaScript/TypeScript<br>Tailwind CSS / SCSS<br>Responsive Web</p>
+            </div>
+            <div class="skill-card">
+                <h3>{{ t.skills.backend.title }}</h3>
+                <p>Node.js, Express<br>Python, Flask<br>PHP, CodeIgniter<br>RESTful API</p>
+            </div>
+            <div class="skill-card">
+                <h3>{{ t.skills.database.title }}</h3>
+                <p>MySQL, MariaDB<br>Database Design & Optimization</p>
+            </div>
+            <div class="skill-card">
+                <h3>{{ t.skills.devops.title }}</h3>
+                <p>Docker<br>AWS<br>GitHub Actions</p>
+            </div>
+            <div class="skill-card">
+                <h3>{{ t.skills.ai.title }}</h3>
+                <p>GitHub Copilot<br>Claude, Claude Code<br>ChatGPT</p>
+            </div>
+            <div class="skill-card">
+                <h3>{{ t.skills.design.title }}</h3>
+                <p>Photoshop, Figma<br>Slack, Notion<br>Git, GitHub</p>
+            </div>
+            <div class="skill-card">
+                <h3>{{ t.skills.cms.title }}</h3>
+                <p>WordPress, 그누보드, 아임웹</p>
+            </div>
+            <div class="skill-card">
+                <h3>{{ t.skills.mobile.title }}</h3>
+                <p>Swift, SwiftUI<br>Flutter<br>iOS & 크로스플랫폼 개발</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="padding: 3rem 0;">
+    <div class="container">
+        <h2 class="section-title">{{ t.home.recent_projects_title }}</h2>
+        <div class="cards-grid">
+            {% assign sorted_projects = site.projects | sort: 'start_date' | reverse %}
+            {% for project in sorted_projects limit:3 %}
+            <article class="card">
+                <div class="card-content">
+                    <h3 class="card-title">
+                        <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+                    </h3>
+                    <p class="card-description">{{ project.subtitle }}</p>
+                    {% if project.technologies %}
+                    <div class="card-meta">
+                        {% for tech in project.technologies limit:3 %}
+                        <span class="tech-tag">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="{{ '/projects' | relative_url }}" class="btn btn-secondary">{{ t.home.view_all_projects }}</a>
+        </div>
+    </div>
+</section>
